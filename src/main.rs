@@ -17,8 +17,7 @@ fn main() {
     println!("Press [=] to enable/disable the script");
     println!("One tap [Z], [Q], [S] or [D] to move once ur ready to farm");
     println!("\n⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅\n");
-    KeybdKey::bind_all(|key| {
-        println!("Pressed {:?} - No effect", key);
+    KeybdKey::bind_all(|_| {
         return;
     });
     EqualKey.bind(|| {
@@ -42,9 +41,8 @@ fn main() {
             }
 
             release_all();
-            sleep(Duration::from_millis(get_u64_between_50_and_200()));
             key.press();
-            sleep(Duration::from_millis(get_u64_between_50_and_80()));
+            sleep(Duration::from_millis(get_u64_between_0_and_10()));
             MouseButton::LeftButton.press();
             println!("Pressed {:?}", key);
             println!("Pressed LeftButton");
@@ -64,14 +62,8 @@ fn release_all() {
     MouseButton::LeftButton.release();
 }
 
-fn get_u64_between_50_and_200() -> u64 {
+fn get_u64_between_0_and_10() -> u64 {
     use rand::Rng;
     let mut rng = rand::thread_rng();
-    rng.gen_range(50..200)
-}
-
-fn get_u64_between_50_and_80() -> u64 {
-    use rand::Rng;
-    let mut rng = rand::thread_rng();
-    rng.gen_range(50..80)
+    rng.gen_range(0..10)
 }

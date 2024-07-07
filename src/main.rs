@@ -5,7 +5,7 @@ const ZQSD: [KeybdKey; 4] = [ZKey, QKey, SKey, DKey];
 
 lazy_static! {
     static ref last_pressed: Mutex<Option<KeybdKey>> = Mutex::new(None);
-    static ref enabled: Mutex<bool> = Mutex::new(true);
+    static ref enabled: Mutex<bool> = Mutex::new(false);
 }
 fn main() {
     println!(" ____  ____  ____ ");
@@ -16,6 +16,7 @@ fn main() {
     println!("\n");
     println!("Press [=] to enable/disable the script");
     println!("One tap [Z], [Q], [S] or [D] to move once ur ready to farm");
+    println!("\n\nthe script is DISABLED");
     println!("\n⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅\n");
     KeybdKey::bind_all(|_| {
         return;

@@ -8,6 +8,15 @@ lazy_static! {
     static ref enabled: Mutex<bool> = Mutex::new(true);
 }
 fn main() {
+    println!(" ____  ____  ____ ");
+    println!("/ ___)(  __)(_  _)");
+    println!("\\___ \\ ) _)   )(");
+    println!("(____/(__)   (__) ");
+    println!("\t> https://noais.fr");
+    println!("\n");
+    println!("Press [=] to enable/disable the script");
+    println!("One tap [Z], [Q], [S] or [D] to move once ur ready to farm");
+    println!("\n⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅⋅.˳˳.⋅ॱ˙˙ॱ⋅.˳˳.⋅ॱ˙˙ॱᐧ.˳˳.⋅\n");
     KeybdKey::bind_all(|key| {
         println!("Pressed {:?} - No effect", key);
         return;
